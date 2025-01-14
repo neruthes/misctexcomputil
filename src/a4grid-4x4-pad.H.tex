@@ -1,0 +1,39 @@
+% \documentclass[a4paper,11pt]{article}
+
+\usepackage{calc}
+\usepackage[hmargin=1mm,vmargin=1mm]{geometry}
+\usepackage{fontspec,xeCJK,graphicx,eso-pic}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\pagestyle{empty}
+
+\newcommand{\makegridcellInnerHook}[0]{}%
+\newcommand{\makegridcell}[1]{%
+    \fboxsep=4.5mm
+    \colorbox{white}{\parbox[t][0.25\textheight-9.2mm][t]{0.25\textwidth-9.2mm}{\makegridcellInnerHook\strut#1}}\hfill
+    % \hskip 0pt plus 500pt%
+}
+
+
+\newcommand{\enablegridhint}[0]{
+    \AddToShipoutPictureFG{
+        \put(0.25\paperwidth,0pt){\rule{0.4pt}{\paperheight}}
+        \put(0.50\paperwidth,0pt){\rule{0.4pt}{\paperheight}}
+        \put(0.75\paperwidth,0pt){\rule{0.4pt}{\paperheight}}
+
+        \put(0pt,0.25\paperheight){\rule{\paperwidth}{0.4pt}}
+        \put(0pt,0.50\paperheight){\rule{\paperwidth}{0.4pt}}
+        \put(0pt,0.75\paperheight){\rule{\paperwidth}{0.4pt}}
+    }
+}
+
+
+
+% ========================================
+% Example usage
+% ========================================
+
+% \begin{document}
+%     \makegridcell{1111}%
+% \end{document}
