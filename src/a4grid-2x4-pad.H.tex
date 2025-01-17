@@ -11,16 +11,16 @@
 \newcommand{\makegridcellInnerHook}[0]{\fboxsep=2pt}%
 \newcommand{\makegridcell}[1]{%
     \fboxsep=4.5mm
-    \colorbox{white}{\parbox[t][0.25\textheight-9.2mm][t]{0.25\textwidth-9.2mm}{\makegridcellInnerHook\strut#1}}\hfill
+    \colorbox{white}{\parbox[t][0.25\textheight-9.4mm][t]{0.5\textwidth-9.4mm}{\makegridcellInnerHook\strut#1}}\hfill
     % \hskip 0pt plus 500pt%
 }
 
 
 \newcommand{\enablegridhint}[0]{
     \AddToShipoutPictureFG{
-        \put(0.25\paperwidth,0pt){\rule{0.4pt}{\paperheight}}
+        % \put(0.25\paperwidth,0pt){\rule{0.4pt}{\paperheight}}
         \put(0.50\paperwidth,0pt){\rule{0.4pt}{\paperheight}}
-        \put(0.75\paperwidth,0pt){\rule{0.4pt}{\paperheight}}
+        % \put(0.75\paperwidth,0pt){\rule{0.4pt}{\paperheight}}
 
         \put(0pt,0.25\paperheight){\rule{\paperwidth}{0.4pt}}
         \put(0pt,0.50\paperheight){\rule{\paperwidth}{0.4pt}}
