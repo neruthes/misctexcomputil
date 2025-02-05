@@ -1,0 +1,43 @@
+% Example: https://pub-714f8d634e8f451d9f2fe91a4debfa23.r2.dev/misctexcomputil/45bfa8be76d33dcbcc9238f6/a4container-envelopeR.pdf
+
+
+% \documentclass[a4paper,12pt]{article} % Recommended document class for your working file
+\usepackage{calc}
+\usepackage[textwidth=110mm,vmargin=6mm]{geometry}
+\usepackage{fontspec,xeCJK,graphicx,eso-pic}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newlength{\envelopeinnermargin}
+\setlength{\envelopeinnermargin}{10mm}
+\newlength{\envelopeheight}
+\setlength{\envelopeheight}{110mm}
+\newlength{\envelopewidth}
+\setlength{\envelopewidth}{220mm}
+\newcommand{\setenvelopesize}[2]{
+    % argv: short, long
+    \newgeometry{hmargin=0mm,tmargin=0.6\envelopeinnermargin,bmargin=0mm}
+    \setlength{\envelopeheight}{#1}
+    \setlength{\envelopewidth}{#2}
+}
+% Initialize size
+\setenvelopesize{110mm}{220mm}
+
+\newcommand{\makeenvelopebox}[1]{
+    \begin{center}%
+        \rotatebox{270}{%
+            \parbox[t][\envelopeheight-2\envelopeinnermargin][t]{\envelopewidth-2\envelopeinnermargin}{#1}%
+        }%
+    \end{center}
+}
+
+
+\newcommand{\enablehintrules}[0]{
+    \AddToShipoutPictureFG*{
+        \put(0.5\paperwidth-0.5\envelopeheight,0mm){\rule{0.4pt}{\paperheight}}
+        \put(0.5\paperwidth+0.5\envelopeheight,0mm){\rule{0.4pt}{\paperheight}}
+        \put(0mm,\paperheight-\envelopewidth){\rule{\paperwidth}{0.4pt}}
+    }
+}

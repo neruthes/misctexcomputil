@@ -1,0 +1,32 @@
+% Example: https://pub-714f8d634e8f451d9f2fe91a4debfa23.r2.dev/misctexcomputil/45bfa8be76d33dcbcc9238f6/a4container-envelopeR.pdf
+
+
+\documentclass[a4paper,12pt]{article}
+
+\input{src/a4container-envelopeR.H.tex}
+
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{tgheros}
+
+
+\setenvelopesize{106mm}{212mm} % argv: short, long
+
+\newcommand{\footerdecoration}[0]{
+    \par\vfill%
+    \flushright
+    28th Febrary 1984 from Palo Alto\\
+    Time Capsule Mailing Service\par
+}
+
+\begin{document}
+\sffamily
+\makeenvelopebox{%
+	TO ADDRESS:\par\vskip1em
+	Mr. John Appleseed\\
+	1 Infinite Loop\\
+	Cupertino, CA 95014\\
+	UNITED STATES
+	\footerdecoration
+	\enablehintrules
+}%
+\end{document}
