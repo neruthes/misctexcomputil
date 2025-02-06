@@ -1,0 +1,36 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{calc}
+\usepackage{geometry}
+\usepackage{eso-pic}
+
+\begin{document}
+\center\sffamily
+\leavevmode
+\vfill\vfill
+Printer Calibration Sheet\par
+Use this sheet to debug printer canvas offset.
+\vfill\vfill
+
+
+
+
+\newlength{\majormargin}
+\setlength{\majormargin}{5mm}
+\AddToShipoutPictureFG{
+    % Horizontal lines
+    \put(0mm,\majormargin-0.2pt){\rule{\paperwidth}{0.4pt}}
+    \put(0mm,\paperheight-\majormargin-0.2pt){\rule{\paperwidth}{0.4pt}}
+    \put(0mm,2\majormargin-0.2pt){\rule{\paperwidth}{0.4pt}}
+    \put(0mm,\paperheight-2\majormargin-0.2pt){\rule{\paperwidth}{0.4pt}}
+    \put(0mm,3\majormargin-0.2pt){\rule{\paperwidth}{0.4pt}}
+    \put(0mm,\paperheight-3\majormargin-0.2pt){\rule{\paperwidth}{0.4pt}}
+
+    % Vertical lines
+    \put(\majormargin-0.2pt,0mm){\rule{0.4pt}{\paperheight}}
+    \put(\paperwidth-\majormargin-0.2pt,0mm){\rule{0.4pt}{\paperheight}}
+    \put(2\majormargin-0.2pt,0mm){\rule{0.4pt}{\paperheight}}
+    \put(\paperwidth-2\majormargin-0.2pt,0mm){\rule{0.4pt}{\paperheight}}
+    \put(3\majormargin-0.2pt,0mm){\rule{0.4pt}{\paperheight}}
+    \put(\paperwidth-3\majormargin-0.2pt,0mm){\rule{0.4pt}{\paperheight}}
+}
+\end{document}
