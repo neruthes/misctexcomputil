@@ -3,7 +3,7 @@
 
 % \documentclass[a4paper,12pt]{article} % Recommended document class for your working file
 \usepackage{calc}
-\usepackage[textwidth=110mm,vmargin=6mm]{geometry}
+\usepackage[textwidth=110mm,vmargin=0.5mm]{geometry}
 \usepackage{fontspec,xeCJK,graphicx,eso-pic}
 
 \pagestyle{empty}
@@ -26,6 +26,8 @@
 \setenvelopesize{110mm}{220mm}
 
 \newcommand{\makeenvelopebox}[1]{
+    \leavevmode%
+    \vspace{-16mm}%
     \begin{center}%
         \rotatebox{270}{%
             \parbox[t][\envelopeheight-2\envelopeinnermargin][t]{\envelopewidth-2\envelopeinnermargin}{#1}%
